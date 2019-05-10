@@ -12,10 +12,8 @@ import warning
 
 try:
     from django.conf import settings as dsettings
-
     is_django = True
 except ImportError:
-    dsettings = {}
     warning.warn("Unable to import Django", ImportWarning)
     is_django = False
 
@@ -27,7 +25,6 @@ except ImportError:
 
 try:
     from line_profiler import LineProfiler
-
     has_line_profiler = True
 except ImportError:
     warning.warn("Unable to import line_profiler", ImportWarning)
@@ -55,7 +52,7 @@ class DebugDecorator:
         raise NotImplemented()
 
     def debug_func(self, *args, **kwargs):
-        """ the function """
+        """ the function to be ran"""
         raise NotImplemented()
 
     def cleanup(self, result=None, *args, **kwargs):
@@ -204,10 +201,10 @@ class LineProfilerDebug(DebugDecorator):
     def __init__(self, logger=None):
         super().__init__(logger)
 
-    def setup(self, *args, **kwargs):
         if not has_line_profiler:
             raise ImportError("'line_profiler' not found.")
 
+    def setup(self, *args, **kwargs):
         self.lprof = LineProfiler()
 
     def cleanup(self, *args, **kwargs):
@@ -221,7 +218,6 @@ class LineProfilerDebug(DebugDecorator):
         self.lprof.print_stats()
 
         return ret
-
 
 if __name__ == "__main__":
 
