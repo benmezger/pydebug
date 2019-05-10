@@ -1,0 +1,4 @@
+black==19.3b0
+Cython==0.29.7
+ipdb==0.12
+line-profiler==2.1.1
