@@ -8,26 +8,26 @@ import cProfile
 import pstats
 import os
 import errno
-import warning
+import warnings
 
 try:
     from django.conf import settings as dsettings
     is_django = True
 except ImportError:
-    warning.warn("Unable to import Django", ImportWarning)
+    warnings.warn("Unable to import Django", ImportWarning)
     is_django = False
 
 try:
     from ipdb import runcall
 except ImportError:
-    warning.warn("Unable to import IPDB. Using PDB instead", ImportWarning)
+    warnings.warn("Unable to import IPDB. Using PDB instead", ImportWarning)
     from pdb import runcall
 
 try:
     from line_profiler import LineProfiler
     has_line_profiler = True
 except ImportError:
-    warning.warn("Unable to import line_profiler", ImportWarning)
+    warnings.warn("Unable to import line_profiler", ImportWarning)
     has_line_profiler = False
 
 
