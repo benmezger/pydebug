@@ -2,6 +2,7 @@ import time
 
 from .base import DebugDecorator
 
+
 class ObjectInfoDebug(DebugDecorator):
     def __init__(self, logger=None):
         super().__init__(logger)

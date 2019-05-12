@@ -4,13 +4,15 @@ import warnings
 
 try:
     from django.conf import settings as dsettings
+
     is_django = True
 except ImportError:
     warnings.warn("Unable to import Django", ImportWarning)
     is_django = False
 
 
-DECMODE = (('calling', 0), ('decorating', 1))
+DECMODE = (("calling", 0), ("decorating", 1))
+
 
 class DebugDecorator:
     def __init__(self, func, logger=None):

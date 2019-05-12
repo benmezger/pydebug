@@ -3,11 +3,13 @@ import traceback
 try:
     from ipdb import runcall
     from ipdb import launch_ipdb_on_exception
+
     has_ipdb = True
 except ImportError:
     warnings.warn("Unable to import IPDB. Using PDB instead", ImportWarning)
     from pdb import runcall
     from pdb import Pdb
+
     has_ipdb = False
 
 from .base import DebugDecorator

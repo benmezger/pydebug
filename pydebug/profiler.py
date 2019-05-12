@@ -4,6 +4,7 @@ import os
 
 try:
     from line_profiler import LineProfiler
+
     has_line_profiler = True
 except ImportError:
     warnings.warn("Unable to import line_profiler", ImportWarning)

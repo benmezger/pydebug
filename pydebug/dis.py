@@ -2,6 +2,7 @@ import dis
 
 from .base import DebugDecorator
 
+
 class DisassembleDebug(DebugDecorator):
     def __init__(self, logger=None):
         super().__init__(logger)
