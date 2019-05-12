@@ -20,7 +20,7 @@ class DebugDecorator:
 
         self.logger = logger
         if not self.logger:
-            self.logger = logging.getLogger()
+            self.logger = logging.getLogger(__name__)
 
         self.mode = DECMODE[1]  # decorating
 
