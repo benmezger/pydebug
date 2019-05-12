@@ -85,7 +85,7 @@ def hello_world(a, b):
     return (a, b)
 ```
 
-# `ObjectInfoDebug`
+### `ObjectInfoDebug`
 
 `ObjectInfoDebug` prints the arguments which were passed to the function, the `performace` counter (in minutes), the
 `process` time (in minutes) and the returned objects by the function.
