@@ -31,6 +31,9 @@ except ImportError:
     has_line_profiler = False
 
 
+DECMODE = (('calling', 0), ('decorating', 1))
+
+
 class DebugDecorator:
     def __init__(self, func, logger=None):
         self.func = func
@@ -39,7 +42,7 @@ class DebugDecorator:
         if not self.logger:
             self.logger = logging.getLogger()
 
-        self.mode = 1  # decorating
+        self.mode = DECMODE[1]  # decorating
         self.sys_version = sys.executable
 
     def raise_if_not_callable(self):
@@ -60,9 +63,9 @@ class DebugDecorator:
         raise NotImplemented()
 
     def __call__(self, *args, **kwargs):
-        if self.mode == "decorating":
+        if self.mode == DECMODE[1]:
             self.func = args[0]
-            self.mode = 1  # calling mode
+            self.mode = DECMODE[0]  # calling mode
             return self
 
         # we ignore if it's a subclass
