@@ -47,7 +47,9 @@ class DebugDecorator:
             handler = logging.StreamHandler(sys.stdout)
             handler.setLevel(logging.DEBUG)
 
-            formatter = logging.Formatter(log_format or '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            formatter = logging.Formatter(
+                log_format or "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+            )
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
         else:
