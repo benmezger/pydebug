@@ -26,14 +26,14 @@ class ObjectInfoDebug(DebugDecorator):
 
         name = self.func.__name__ if self.is_func else self.func.__class__.__name__
         if self.is_func:
-            print(f"Calling {name}({self.signature})")
-            print(f"{name!r} Elapsed time: {total_perf} [min]")
-            print(f"{name!r} CPU process time: {total_proc} [min]")
-            print(f"{name!r} returned {ret!r}")
+            self.logger.debug(f"Calling {name}({self.signature})")
+            self.logger.debug(f"{name!r} Elapsed time: {total_perf} [min]")
+            self.logger.debug(f"{name!r} CPU process time: {total_proc} [min]")
+            self.logger.debug(f"{name!r} returned {ret!r}")
         else:
-            print(f"Calling {name}({self.signature})")
-            print(f"{name!r} Elapsed time: {total_perf} [min]")
-            print(f"{name!r} CPU process time: {total_proc} [min]")
-            print(f"{name!r} returned {ret!r}")
+            self.logger.debug(f"Calling {name}({self.signature})")
+            self.logger.debug(f"{name!r} Elapsed time: {total_perf} [min]")
+            self.logger.debug(f"{name!r} CPU process time: {total_proc} [min]")
+            self.logger.debug(f"{name!r} returned {ret!r}")
 
         return ret

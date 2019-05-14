@@ -16,11 +16,23 @@ DECMODE = (("calling", 0), ("decorating", 1))
 
 class DebugDecorator:
     def __init__(self, func, logger=None):
+    def __init__(self, func, logger=None, log_handler=None, log_format=None):
         self.func = func
 
         self.logger = logger
         if not self.logger:
+            logging.basicConfig(level=logging.DEBUG)
             self.logger = logging.getLogger(__name__)
+
+        if not log_handler:
+            handler = logging.StreamHandler(sys.stdout)
+            handler.setLevel(logging.DEBUG)
+
+            formatter = logging.Formatter(log_format or '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
+        else:
+            self.logger.addHandler(log_handler)
 
         self.mode = DECMODE[1]  # decorating
 
