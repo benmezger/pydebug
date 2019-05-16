@@ -156,8 +156,9 @@ class DebugDecorator:
             return self.func(*args, **kwargs)
 
         # Ignore if it's a Django project and debug is set to False
-        if is_django and not dsettings.get("DEBUG"):
-            return self.func(*args, **kwargs)
+        if is_django:
+            if not dsettings.DEBUG:
+                return self.func(*args, **kwargs)
 
         self.setup(*args, **kwargs)
         result = self.debug_func(*args, **kwargs)
