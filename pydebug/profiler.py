@@ -1,6 +1,7 @@
 import cProfile
 import pstats
 import os
+import warnings
 
 try:
     from line_profiler import LineProfiler
