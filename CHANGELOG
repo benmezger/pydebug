@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+- Updated `README.md` with `LineProfiler` install instructions.
+
 ## [0.5] - 25.05.2019
 ### Fixed
 - Import missing `sys` library in the `profiler` decorator.

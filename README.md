@@ -22,6 +22,10 @@ within a Django project.
 
 `Line-profiler` requires `Cython` to work, if `IPDB` is not found, it fallsback to Python's standard `PBD` library.
 
+**NOTE:** At the moment, it is not possible to add `rkern/line_profiler` as a requirements due to their install process.
+Check their [README](https://github.com/rkern/line_profiler/blob/master/README.rst#installation) for installation instructions.
+
+
 # Usage
 
 ### `PDBDebugger`
