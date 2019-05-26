@@ -1,4 +1,5 @@
 import dis
+import sys
 
 from .base import DebugDecorator
 
@@ -14,5 +15,9 @@ class DisassembleDebug(DebugDecorator):
         pass
 
     def debug_func(self, *args, **kwargs):
-        print(dis.dis(self.func))
+        if self.logger:
+            logger.info(dis.dis(self.func))
+        else:
+            sys.stdout.write(dis.dis(self.func))
+
         return self.func(*args, **kwargs)

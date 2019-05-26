@@ -162,6 +162,9 @@ class DebugDecorator:
 
         self.setup(*args, **kwargs)
         result = self.debug_func(*args, **kwargs)
+
+        self.logger.info(f"Decorated function returned {result}")
+
         self.cleanup(result=None, *args, **kwargs)
 
         return result
