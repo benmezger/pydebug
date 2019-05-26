@@ -1,0 +1,25 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [0.5] - 25.05.2019
+### Fixed
+- Import missing `sys` library in the `profiler` decorator.
+
+## [0.4] - 16.05.2019
+### Fixed
+- Import missing `warnigns` library.
+- Fixed Django's settings variable retrieval.
+
+## [0.3] - 14.05.2019
+### Fixed
+- Add list of requirements to `setup.py`.
+- Improved coding style with `black`.
+
+### Added
+- New `README.md` on how to use this library.
+- All classes now have a self-explained docstring.
+
+
+## [0.2] - 14.05.2019
+### Changed
+- Allow user to pass a custom `logging` class to the `ObjectInfo` decorator.
