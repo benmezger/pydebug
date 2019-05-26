@@ -7,7 +7,7 @@ requires = ["Cython>=0.29.7", "ipdb>=0.12"]
 
 setup(
     name="python-pydebug",
-    version="0.4",
+    version="0.5",
     description="A set of debugging decorators",
     long_description=long_description,
     long_description_content_type="text/markdown",
