@@ -1,8 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [0.5] - 08.06.2019
+### Added
 - Updated `README.md` with `LineProfiler` install instructions.
+### Fixed
+- Fixed issue #3 where errno is not imported.
 
 ## [0.5] - 25.05.2019
 ### Fixed

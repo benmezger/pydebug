@@ -3,6 +3,8 @@ import pstats
 import os
 import warnings
 import sys
+import errno
+
 
 try:
     from line_profiler import LineProfiler
